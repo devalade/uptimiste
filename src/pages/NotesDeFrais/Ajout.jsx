@@ -18,7 +18,7 @@ function Ajout() {
     <main className="bg-custom-light h-screen overflow-y-hidden text-gray-700 font-main  relative">
       <div className="flex items-start justify-between">
         <SideBar />
-        <div className="mx-8   w-full h-full min-h-screen overflow-y-auto">
+        <div className="mx-8   w-full h-full min-h-screen">
           <div className="mb-20 w-full mt-2 flex justify-end items-center">
             <div className="m-6 indicator">
               <div className="w-1.5 h-1.5 p-0 bg-blue-600 border-blue-600 indicator-item badge badge-secondary"></div>

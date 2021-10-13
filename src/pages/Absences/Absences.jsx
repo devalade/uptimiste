@@ -8,7 +8,7 @@ import MiArrow from "../../components/icons/MiArrow";
 import Success from "../../components/icons/Success";
 import Notification from "../../components/icons/Notification";
 
-function Valide() {
+function Absences() {
   return (
     <main className="bg-custom-light h-screen overflow-y-hidden text-gray-700 font-main  relative">
       <div className="flex items-start justify-between">
@@ -32,16 +32,16 @@ function Valide() {
           </div>
           <div className="flex justify-between mb-2">
             <h2 className="text-2xl font-bold text-gray-900">
-              Mes notes de frais
+              Mes congés et Absences
             </h2>
-            {/* <div>
+            <div>
               <div className="flex items-center gap-x-2">
                 <h2 className="text-2xl text-custom-d font-semibold">25,24</h2>
                 <span className="text-lg font-light text-gray-500">solde</span>
                 <Arrow />
-                <Button text="Nouvelle une note" />
+                <Button text="Demande d’absence" />
               </div>
-            </div> */}
+            </div>
           </div>
           {/* Content  */}
           <div className="w-full h-full bg-white grid grid-cols-7 overflow-y-auto scrollbar-hide">
@@ -146,74 +146,7 @@ function Valide() {
             </div>
 
             {/* Left Side  */}
-            <div className="col-span-5 w-full">
-              {/* Title  */}
-              <div className="flex items-center ml-4 my-3 space-x-2">
-                <h2 className="text-lg text-gray-900 font-semibold">Essence</h2>
-                <small className="bg-green-500 p-0.5 px-2 rounded-md font-semibold text-2xs text-white">
-                  Validé
-                </small>
-              </div>
-              <div className="w-full h-full px-8 pt-6 border border-gray-200">
-                <div className="w-full grid grid-cols-3 place-items-center">
-                  <span className="col-span-1 w-full space-y-2">
-                    <h2 className="font-semibold text-lg text-gray-600">
-                      Date
-                    </h2>
-                    <p className="text-base text-gray-500">01/04/2021</p>
-                  </span>
-                  <span className="col-span-1 w-full space-y-2">
-                    <h2 className="font-semibold text-lg text-gray-600">
-                      Type
-                    </h2>
-                    <p className="text-base text-gray-500">Transport</p>
-                  </span>
-                  <span className="col-span-1 w-full space-y-2">
-                    <h2 className="font-semibold text-lg text-gray-600">
-                      Montant
-                    </h2>
-                    <p className="text-base text-gray-500">20.000</p>
-                  </span>
-                </div>
-                <div class="tabs w-full my-10 border-b-2 -pb-6">
-                  <a class="tab tab-bordered tab-active -mb-0.5 text-lg !border-custom-d">
-                    Justificatif
-                  </a>
-                  <a class="tab  text-lg">Commentaires</a>
-                </div>
-                {/* Table  */}
-                <div className="overflow-x-auto">
-                  <table className="table w-full">
-                    <thead className="!bg-custom-l3 z-50">
-                      <tr className="">
-                        <th className="!bg-transparent">Nom de le pièce</th>
-                        <th className="!bg-transparent inline-flex">
-                          <span> Date d’ajouts</span>
-                          <span className="inline pl-2 space-y-0.5">
-                            <Arrow className=" rotate-180 text-gray-700 !stroke-current" />
-                            <Arrow className="text-gray-700 !stroke-current" />
-                          </span>
-                        </th>
-                        <th className="!bg-transparent inline-flex">
-                          Actions
-                          <span className="pl-2 space-y-0.5">
-                            <Arrow className="rotate-180 text-gray-700 !stroke-current" />
-                            <Arrow className="text-gray-700 !stroke-current" />
-                          </span>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y-2 divide-gray-300">
-                      <tr>
-                        <td>Aadi Kapoor</td>
-                        <td>24/09/2021</td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+            <div className="col-span-5 w-full"></div>
           </div>
         </div>
       </div>
@@ -221,4 +154,4 @@ function Valide() {
   );
 }
 
-export default Valide;
+export default Absences;

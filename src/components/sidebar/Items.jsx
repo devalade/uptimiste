@@ -5,7 +5,7 @@ function Items({ icon: Icon, name, to = "" }) {
   return (
     <NavLink
       to={to}
-      activeClassName="bg-custom-light text-custom-d"
+      activeClassName="bg-custom-light text-custom-d2"
       className="w-full group text-gray-50  hover:bg-custom-light hover:text-custom-d flex items-center pl-8 p-2 py-3  my-2 transition-colors duration-200 justify-start"
       href="#">
       <span className="text-left">

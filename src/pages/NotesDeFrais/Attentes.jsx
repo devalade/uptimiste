@@ -8,7 +8,7 @@ import MiArrow from "../../components/icons/MiArrow";
 import Success from "../../components/icons/Success";
 import Notification from "../../components/icons/Notification";
 
-function Valide() {
+function Attentes() {
   return (
     <main className="bg-custom-light h-screen overflow-y-hidden text-gray-700 font-main  relative">
       <div className="flex items-start justify-between">
@@ -146,13 +146,20 @@ function Valide() {
             </div>
 
             {/* Left Side  */}
-            <div className="col-span-5 w-full">
+            <div className="col-span-5 w-full mt-4">
               {/* Title  */}
-              <div className="flex items-center ml-4 my-3 space-x-2">
-                <h2 className="text-lg text-gray-900 font-semibold">Essence</h2>
-                <small className="bg-green-500 p-0.5 px-2 rounded-md font-semibold text-2xs text-white">
-                  Validé
-                </small>
+              <div className="flex items-center mb-3 justify-between space-x-2">
+                <div className="flex items-center space-x-2 ">
+                  <h2 className="text-lg text-gray-900 font-semibold">
+                    Essence
+                  </h2>
+                  <small className="bg-yellow-500 p-0.5 px-2 rounded-md font-semibold text-2xs text-white">
+                    En attentes
+                  </small>
+                </div>
+                <button className="px-4 py-3 border-2 border-red-500 text-red-500 font-medium hover:bg-red-500 hover:text-red-100 rounded-md">
+                  Annuler la note
+                </button>
               </div>
               <div className="w-full h-full px-8 pt-6 border border-gray-200">
                 <div className="w-full grid grid-cols-3 place-items-center">
@@ -221,4 +228,4 @@ function Valide() {
   );
 }
 
-export default Valide;
+export default Attentes;

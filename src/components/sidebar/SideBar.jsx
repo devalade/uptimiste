@@ -24,7 +24,7 @@ function SideBar() {
             <Items icon={Calendar} name="Absences" to="/absences" />
             <Items icon={Paper} name="Note de frais" to="/notes-de-frais" />
             <Items icon={Document} name="Bulletins de paie" to="/dsd" />
-            <Items icon={TickSquare} name="Validations" to="/qwerty" />
+            <Items icon={TickSquare} name="Validations" to="/validations" />
             <Items icon={Work} name="Temps de travail" to="/temps-de-travail" />
             <Items icon={Category} name="Mon entreprise" to="mon-entreprise" />
           </div>

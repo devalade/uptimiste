@@ -8,12 +8,12 @@ import MiArrow from "../../components/icons/MiArrow";
 import Success from "../../components/icons/Success";
 import Notification from "../../components/icons/Notification";
 
-function Index() {
+function AbsencesEnAttentes() {
   return (
-    <main className="bg-custom-light text-gray-700 font-main  relative">
+    <main className="bg-custom-light h-screen overflow-y-hidden text-gray-700 font-main  relative">
       <div className="flex items-start justify-between">
         <SideBar />
-        <div className="mx-8   w-full h-full min-h-screen overflow-y-auto">
+        <div className="mx-8 w-full h-full min-h-screen ">
           <div className="lg:mb-10 mb-20 w-full mt-2 flex justify-end items-center">
             <div className="m-6 indicator">
               <div className="w-1.5 h-1.5 p-0 bg-blue-600 border-blue-600 indicator-item badge badge-secondary"></div>
@@ -32,23 +32,23 @@ function Index() {
           </div>
           <div className="flex justify-between mb-2">
             <h2 className="text-2xl font-bold text-gray-900">
-              Mes notes de frais
+              Mes congés et Absences
             </h2>
             <div>
               <div className="flex items-center gap-x-2">
-                {/* <h2 className="text-2xl text-custom-d font-semibold">25,24</h2>
+                <h2 className="text-2xl text-custom-d font-semibold">25,24</h2>
                 <span className="text-lg font-light text-gray-500">solde</span>
-                <Arrow /> */}
-                <Button text="Nouvelle une note" />
+                <Arrow />
+                <Button text="Demande d’absence" />
               </div>
             </div>
           </div>
           {/* Content  */}
-          <div className="w-full h-full bg-white grid grid-cols-7 overflow-y-scroll">
+          <div className="w-full h-full bg-white grid grid-cols-7 overflow-y-auto scrollbar-hide">
             {/* Right Side  */}
             <div className="col-span-2">
               {/* Search Bar  */}
-              <div className="flex items-center lg:mx-4 mx-8 mb-5 rounded-md bg-gray-100 border-custom-l3 border-2">
+              <div className="flex items-center  mx-8 mb-5 rounded-md bg-gray-100 border-custom-l3 border-2">
                 <Search className="w-6 ml-2" />
                 <input
                   type="text"
@@ -144,8 +144,23 @@ function Index() {
                 </div>
               </div>
             </div>
+
             {/* Left Side  */}
-            <div className="col-span-5 w-full border-gray-200 border"></div>
+            <div className="col-span-5 w-full">
+              <div className="flex items-center mb-3 justify-between space-x-2">
+                <div className="flex items-center space-x-2 ">
+                  <h2 className="text-lg text-gray-900 font-semibold">
+                    Essence
+                  </h2>
+                  <small className="bg-yellow-500 p-0.5 px-2 rounded-md font-semibold text-2xs text-white">
+                    En attentes
+                  </small>
+                </div>
+                <button className="px-4 py-3 border-2 border-red-500 text-red-500 font-medium hover:bg-red-500 hover:text-red-100 rounded-md">
+                  Annuler la note
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -153,4 +168,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default AbsencesEnAttentes;
