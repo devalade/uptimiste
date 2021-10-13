@@ -6,6 +6,7 @@ import Ajout from "./pages/NotesDeFrais/Ajout";
 import Valide from "./pages/NotesDeFrais/Valide";
 import Attentes from "./pages/NotesDeFrais/Attentes";
 import Absences from "./pages/Absences/Absences";
+import AbsencesEnAttentes from "./pages/Absences/AbsencesEnAttentes";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/notes-de-frais/valide" component={Valide} />
         <Route exact path="/notes-de-frais/attentes" component={Attentes} />
         <Route exact path="/absences" component={Absences} />
+        <Route exact path="/absences/attentes" component={AbsencesEnAttentes} />
       </Switch>
       {/* <Index /> */}
       {/* <Ajout /> */}
