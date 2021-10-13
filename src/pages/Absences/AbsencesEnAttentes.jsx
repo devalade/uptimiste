@@ -194,10 +194,8 @@ function AbsencesEnAttentes() {
                     <thead className="!bg-custom-l3 z-50">
                       <tr className="">
                         <th className="!bg-transparent">Début des congés</th>
-                        <th className="!bg-transparent inline-flex">
-                          Fin des congés
-                        </th>
-                        <th className="!bg-transparent inline-flex">Durée</th>
+                        <th className="!bg-transparent">Fin des congés</th>
+                        <th className="!bg-transparent ">Durée</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y-2 divide-gray-300">
