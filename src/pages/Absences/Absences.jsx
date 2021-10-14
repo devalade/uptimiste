@@ -10,7 +10,7 @@ import Notification from "../../components/icons/Notification";
 
 function Absences() {
   return (
-    <main className="bg-custom-light h-screen overflow-y-hidden text-gray-700 font-main  relative">
+    <main className="bg-custom-light h-screen overflow-y-auto text-gray-700 font-main  relative">
       <div className="flex items-start justify-between">
         <SideBar />
         <div className="mx-8 w-full h-full min-h-screen ">

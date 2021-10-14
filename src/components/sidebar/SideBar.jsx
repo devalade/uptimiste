@@ -11,8 +11,8 @@ import { Link } from "react-router-dom";
 
 function SideBar() {
   return (
-    <div className="h-screen overflow-y-hidden  lg:block shadow-lg relative w-96">
-      <div className="bg-[#173E48] h-full dark:bg-gray-700">
+    <div className="min-h-screen max-h-screen bg-[#173E48] sticky top-0 lg:block shadow-lg w-96">
+      <div className=" h-full dark:bg-gray-700">
         <div className="flex items-center justify-start pt-12 ml-8">
           <p className="font-semibold text-white text-4xl dark:text-white">
             Uptimiste
