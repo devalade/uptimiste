@@ -10,10 +10,10 @@ import Notification from "../../components/icons/Notification";
 
 function Attentes() {
   return (
-    <main className="bg-custom-light h-screen overflow-y-hidden text-gray-700 font-main  relative">
+    <main className="bg-custom-light h-screen text-gray-700 font-main  relative">
       <div className="flex items-start justify-between">
         <SideBar />
-        <div className="mx-8 w-full h-full min-h-screen ">
+        <div className="mx-8 w-full min-h-screen max-h-screen overflow-auto scrollbar-hide">
           <div className="lg:mb-10 mb-20 w-full mt-2 flex justify-end items-center">
             <div className="m-6 indicator">
               <div className="w-1.5 h-1.5 p-0 bg-blue-600 border-blue-600 indicator-item badge badge-secondary"></div>
@@ -44,7 +44,7 @@ function Attentes() {
             </div> */}
           </div>
           {/* Content  */}
-          <div className="w-full h-full bg-white grid grid-cols-7 overflow-y-auto scrollbar-hide">
+          <div className="w-full h-full bg-white grid grid-cols-7">
             {/* Right Side  */}
             <div className="col-span-2">
               {/* Search Bar  */}
