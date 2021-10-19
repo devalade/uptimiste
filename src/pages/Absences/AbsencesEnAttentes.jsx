@@ -7,6 +7,7 @@ import Pending from "../../components/icons/Pending";
 import MiArrow from "../../components/icons/MiArrow";
 import Success from "../../components/icons/Success";
 import Notification from "../../components/icons/Notification";
+import MyCalendar from "../../components/MyCalendar/MyCalendar";
 
 function AbsencesEnAttentes() {
   return (
@@ -207,6 +208,7 @@ function AbsencesEnAttentes() {
                     </tbody>
                   </table>
                 </div>
+                <MyCalendar />
               </div>
             </div>
           </div>

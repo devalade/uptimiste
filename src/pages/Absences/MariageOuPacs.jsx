@@ -1,18 +1,27 @@
 import React from "react";
 import SideBar from "../../components/sidebar/SideBar";
+import Arrow from "../../components/icons/Arrow";
+import Button from "../../components/Button";
+import Search from "../../components/icons/Search";
+import Pending from "../../components/icons/Pending";
+import MiArrow from "../../components/icons/MiArrow";
+import Success from "../../components/icons/Success";
 import Notification from "../../components/icons/Notification";
+import MyCalendar from "../../components/MyCalendar/MyCalendar";
 import Input from "../../components/Input";
-import Textarea from "../../components/Textarea";
-import Select from "../../components/Select";
 import InputFile from "../../components/InputFile";
+import Select from "../../components/Select";
+import Textarea from "../../components/Textarea";
+import CheckBox from "../../components/CheckBox";
+import SmallInputFile from "../../components/SmallInputFile";
 
-function Ajout() {
+function MariageOuPacs() {
   return (
     <main className="bg-custom-light h-screen  text-gray-700 font-main  relative">
       <div className="flex items-start justify-between">
         <SideBar />
-        <div className="mx-8   w-full h-full min-h-screen max-h-screen overflow-auto scrollbar-hide">
-          <div className="mb-20 w-full mt-2 flex justify-end items-center">
+        <div className="mx-8 w-full h-full min-h-screen max-h-screen overflow-auto scrollbar-hide">
+          <div className="lg:mb-10 xl:mb-20 w-full mt-2 flex justify-end items-center">
             <div className="m-6 indicator">
               <div className="w-1.5 h-1.5 p-0 bg-blue-600 border-blue-600 indicator-item badge badge-secondary"></div>
               <Notification className=" fill-current text-gray-400" />
@@ -30,66 +39,49 @@ function Ajout() {
           </div>
           <div className="flex justify-between mb-2">
             <h2 className="text-2xl font-bold text-gray-900">
-              Mes notes de frais
+              Demande d’absence
             </h2>
-            {/* <div>
+            <div>
               <div className="flex items-center gap-x-2">
                 <h2 className="text-2xl text-custom-d font-semibold">25,24</h2>
                 <span className="text-lg font-light text-gray-500">solde</span>
-                <Arrow />
-                <Button text="Nouvelle une note" />
+                <Arrow clasName=" " />
               </div>
-            </div> */}
+            </div>
           </div>
           {/* Content  */}
-          <div className="w-full h-full px-16 py-12 bg-white grid grid-cols-7 gap-x-32 shadow-base-200">
+          <div className="w-full h-full px-16 py-12 bg-white grid grid-cols-7 gap-x-32 shadow-base-200 ">
+            {/* Right Side  */}
+
             <div className="col-span-3">
               <form action="" className="w-full px-8">
-                <Input
-                  name="Nom de la depense"
+                <Select
+                  name="Type d’absence"
                   type="text"
-                  placeholder="Nom de la depense"
+                  placeholder="Evènement familial"
                 />
                 <Select
-                  name="Type de la depense"
+                  name="Type  d’évènement"
                   type="text"
-                  placeholder="Type de la depense"
+                  placeholder="Mariage ou PACS"
                 />
-                <Input
-                  name="Type de la depense"
-                  type="date"
-                  placeholder="Type de la depense"
-                />
-                <div className="grid grid-cols-2 gap-x-4">
-                  <Input
-                    name="Montant de depense"
-                    type="text"
-                    placeholder="20.000"
-                  />
-                  <Select name="La devise" type="text" placeholder="Euro" />
-                </div>
                 <Select
-                  name="TVA"
+                  name="Précisions"
                   type="text"
-                  placeholder="Selectionner le taux de   la TVA"
+                  placeholder="Choisir le type"
                 />
-                <Textarea
-                  name="Commentaire"
-                  placeholder="Votre commentaire..."
-                />
+                <Input name="Début " type="date" />
+                <Input name="Fin" type="date" />
+                <SmallInputFile />
                 <div className="flex justify-end space-x-3 mt-4">
-                  <button className="btn btn-outline normal-case border-custom-d text-custom-d hover:bg-custom-d hover:border-custom-d hover:text-custom-l4">
-                    Enrégistré pour plutard
-                  </button>
                   <button className="btn normal-case text-custom-l4 bg-custom-d border-custom-d hover:bg-custom-d1 hover:border-custom-d1">
-                    Enrégistrer
+                    Comfirmer
                   </button>
                 </div>
               </form>
             </div>
             <div className="col-span-4">
-              <h2 className="text-gray-900">Pièces justificatives</h2>
-              <InputFile />
+              <MyCalendar />
             </div>
           </div>
         </div>
@@ -98,4 +90,4 @@ function Ajout() {
   );
 }
 
-export default Ajout;
+export default MariageOuPacs;
