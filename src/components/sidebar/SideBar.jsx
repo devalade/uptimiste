@@ -19,11 +19,7 @@ function SideBar() {
         </div>
         <nav className='mt-8'>
           <div>
-            <SideBarItems
-              icon={Home}
-              name='Tableau de bord'
-              to='/tableau-de-bord'
-            />
+            <SideBarItems icon={Home} name='Tableau de bord' to='/' />
             <SideBarItems icon={Calendar} name='Absences' to='/absences' />
             <SideBarItems
               icon={Paper}
