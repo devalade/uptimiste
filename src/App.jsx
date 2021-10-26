@@ -13,31 +13,41 @@ import NaissanceAdoption from "./pages/Absences/NaissanceAdoption";
 import MariageOuPacs from "./pages/Absences/MariageOuPacs";
 import Maladie from "./pages/Absences/Maladie";
 import TempsDeTravail from "./pages/TempsDeTravail/TempsDeTravail";
+import VueGlobalTout from "./pages/TempsDeTravail/VueGlobalTout";
+import BulletinDePaie from "./pages/BulletinDePaie/BulletinDePaie";
+import TableauDeBord from "./pages/TableauDeBord/TableauDeBord";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/notes-de-frais" component={Index} />
-        <Route exact path="/notes-de-frais/ajout" component={Ajout} />
-        <Route exact path="/notes-de-frais/valide" component={Valide} />
-        <Route exact path="/notes-de-frais/attentes" component={Attentes} />
-        <Route exact path="/absences" component={Absences} />
-        <Route exact path="/absences/attentes" component={AbsencesEnAttentes} />
-        <Route exact path="/absences/valide" component={AbsencesValide} />
+        <Route exact path='/notes-de-frais' component={Index} />
+        <Route exact path='/notes-de-frais/ajout' component={Ajout} />
+        <Route exact path='/notes-de-frais/valide' component={Valide} />
+        <Route exact path='/notes-de-frais/attentes' component={Attentes} />
+        <Route exact path='/absences' component={Absences} />
+        <Route exact path='/absences/attentes' component={AbsencesEnAttentes} />
+        <Route exact path='/absences/valide' component={AbsencesValide} />
         <Route
           exact
-          path="/absences/demande-absence"
+          path='/absences/demande-absence'
           component={DemandeAbsence}
         />
         <Route
           exact
-          path="/absences/naissance-adoption"
+          path='/absences/naissance-adoption'
           component={NaissanceAdoption}
         />
-        <Route exact path="/absences/mariage-pacs" component={MariageOuPacs} />
-        <Route exact path="/absences/maladie" component={Maladie} />
-        <Route exact path="/temps-de-travail" component={TempsDeTravail} />
+        <Route exact path='/absences/mariage-pacs' component={MariageOuPacs} />
+        <Route exact path='/absences/maladie' component={Maladie} />
+        <Route exact path='/temps-de-travail' component={TempsDeTravail} />
+        <Route
+          exact
+          path='/temps-de-travail/vue-global-tout'
+          component={VueGlobalTout}
+        />
+        <Route exact path='/bulletin-de-paie' component={BulletinDePaie} />
+        <Route exact path='/tableau-de-bord' component={TableauDeBord} />
       </Switch>
       {/* <Index /> */}
       {/* <Ajout /> */}

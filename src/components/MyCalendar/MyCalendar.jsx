@@ -38,40 +38,42 @@ function MyCalendar() {
     }
   };
   return (
-    <div className="mt-12 w-full ">
-      <div className="flex w-full justify-between">
-        <div className="w-full flex space-x-6">
-          <div className="flex items-center space-x-6">
-            <ChevronLeft className="w-12 h-12" />
+    <div className='mt-12 w-full '>
+      <div className='flex w-full justify-between'>
+        <div className='w-full flex space-x-6'>
+          <div className='flex items-center space-x-6'>
+            <ChevronLeft className='w-3 h-3' />
             <h3>Aujourd'hui</h3>
-            <ChevronRight className="w-12 h-12" />
+            <ChevronRight className='w-3 h-3' />
           </div>
-          <div className="flex items-center space-x-4">
+          <div className='flex items-center space-x-4'>
             {(activeShowWeek && (
               <>
-                <h3>La semaine 26 Août au 01 Septembre</h3>
-                <Arrow className="text-custom-d stroke-current" />
+                <h3 className='font-medium'>
+                  La semaine 26 Août au 01 Septembre
+                </h3>
+                <Arrow className='text-custom-d stroke-current' />
               </>
             )) ||
               (activeShowMonth && (
                 <>
                   <h3>Août au 01</h3>
-                  <Arrow className="text-custom-d stroke-current" />
+                  <Arrow className='text-custom-d stroke-current' />
                 </>
               ))}
           </div>
         </div>
         <div>
-          <div className="btn-group w-max space-x-1">
+          <div className='btn-group w-max space-x-1'>
             {CalendarOptions.map(({ title }) => (
               <input
                 key={title}
                 onChange={handleChange}
-                type="radio"
-                name="options"
+                type='radio'
+                name='options'
                 id={title}
                 data-title={title}
-                className="btn checked:!bg-custom-l3 capitalize checked:text-custom-d border  checked:!border-custom-l3 !bg-gray-300 !border-gray-300 !text-gray-900 font-normal"
+                className='btn checked:!bg-custom-l3 capitalize checked:text-custom-d border  checked:!border-custom-l3 !bg-gray-300 !border-gray-300 !text-gray-900 font-normal'
               />
             ))}
           </div>
