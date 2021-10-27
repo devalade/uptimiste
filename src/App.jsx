@@ -47,7 +47,7 @@ function App() {
           component={VueGlobalTout}
         />
         <Route exact path='/bulletin-de-paie' component={BulletinDePaie} />
-        <Route exact path='/' component={TableauDeBord} />
+        <Route exact path='/tableau-de-bord' component={TableauDeBord} />
       </Switch>
       {/* <Index /> */}
       {/* <Ajout /> */}

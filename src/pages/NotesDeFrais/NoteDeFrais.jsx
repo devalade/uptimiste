@@ -9,6 +9,7 @@ import Success from "../../components/icons/Success";
 import Notification from "../../components/icons/Notification";
 import Add from "../../components/icons/Add";
 import SplitBox from "../../components/SplitBox/SplitBox";
+import { Link } from "react-router-dom";
 
 function NoteDeFrais() {
   return (
@@ -41,7 +42,9 @@ function NoteDeFrais() {
                 {/* <h2 className="text-2xl text-custom-d font-semibold">25,24</h2>
                 <span className="text-lg font-light text-gray-500">solde</span>
                 <Arrow /> */}
-                <Button label='Nouvelle une note' icon={Add} type='fill' />
+                <Link to='/notes-de-frais/ajout'>
+                  <Button label='Nouvelle une note' icon={Add} type='fill' />
+                </Link>
               </div>
             </div>
           </div>

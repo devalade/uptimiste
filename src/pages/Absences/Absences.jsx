@@ -10,6 +10,7 @@ import Notification from "../../components/icons/Notification";
 import SplitBox from "../../components/SplitBox/SplitBox";
 import Add from "../../components/icons/Add";
 import Input from "../../components/Input";
+import { Link } from "react-router-dom";
 
 function Absences() {
   return (
@@ -42,7 +43,9 @@ function Absences() {
                 <h2 className='text-2xl text-custom-d font-semibold'>25,24</h2>
                 <span className='text-lg font-light text-gray-500'>solde</span>
                 <Arrow className='w-4 h-4 stroke-current text-custom-d mr-4' />
-                <Button icon={Add} label='Demande d’absence' />
+                <Link to='/absences/demande-absence'>
+                  <Button icon={Add} label='Demande d’absence' />
+                </Link>
               </div>
             </div>
           </div>
