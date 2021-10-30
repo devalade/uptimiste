@@ -1,16 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function CheckBox({ label, name, checked }) {
+function CheckBox({ label, type = "radio", name, checked }) {
   return (
     <div className='form-control w-max space-x-4'>
       <label className='label'>
         <input
-          type='radio'
+          type={type}
           name={name}
           checked={checked}
-          value=''
-          className='radio checked:bg-custom-l1 mr-3'
+          className={`checked:!bg-custom-l1 ${type} checkbox-accent    mr-3`}
         />
         <span className='label-text'>{label}</span>
       </label>

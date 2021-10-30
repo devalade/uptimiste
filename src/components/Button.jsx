@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Button({ label, type = "fill", icon: Icon }) {
+function Button({ label, type = "fill", icon: Icon, className = "" }) {
   return (
     <button
       className={
         (type === "fill" &&
-          "btn normal-case text-custom-l4 bg-custom-d border-custom-d hover:bg-custom-d1 hover:border-custom-d1") ||
+          `${className} btn normal-case text-custom-l4 bg-custom-d border-custom-d hover:bg-custom-d1 hover:border-custom-d1`) ||
         (type === "outline" &&
-          "btn btn-outline normal-case border-custom-d text-custom-d hover:bg-custom-d hover:border-custom-d hover:text-custom-l4")
+          `${className} btn btn-outline normal-case border-custom-d text-custom-d hover:bg-custom-d hover:border-custom-d hover:text-custom-l4`)
       }
       role='button'
       aria-pressed='true'>

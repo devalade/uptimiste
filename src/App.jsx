@@ -16,11 +16,17 @@ import TempsDeTravail from "./pages/TempsDeTravail/TempsDeTravail";
 import VueGlobalTout from "./pages/TempsDeTravail/VueGlobalTout";
 import BulletinDePaie from "./pages/BulletinDePaie/BulletinDePaie";
 import TableauDeBord from "./pages/TableauDeBord/TableauDeBord";
+import LoginCollabo from "./pages/Login/LoginCollabo";
+import LoginPage from "./pages/Login/LoginPage";
+import LoginPage2 from "./pages/Login/LoginPage2";
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path='/login/collabo' component={LoginCollabo} />
+        <Route exact path='/login' component={LoginPage2} />
+
         <Route exact path='/notes-de-frais' component={Index} />
         <Route exact path='/notes-de-frais/ajout' component={Ajout} />
         <Route exact path='/notes-de-frais/valide' component={Valide} />
