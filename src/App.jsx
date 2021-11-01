@@ -25,7 +25,8 @@ function App() {
     <Router>
       <Switch>
         <Route exact path='/login/collabo' component={LoginCollabo} />
-        <Route exact path='/login' component={LoginPage2} />
+        <Route exact path='/login/2' component={LoginPage} />
+        <Route exact path='/login/1' component={LoginPage2} />
 
         <Route exact path='/notes-de-frais' component={Index} />
         <Route exact path='/notes-de-frais/ajout' component={Ajout} />

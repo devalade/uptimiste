@@ -1,6 +1,6 @@
 import React from "react";
 
-function Days({ value, active, current }) {
+function MyCalendarDays({ value, active, current }) {
   return (
     <h4
       className={`text-right flex justify-end text-gray-900 pt-2 pr-2 ${
@@ -11,4 +11,4 @@ function Days({ value, active, current }) {
   );
 }
 
-export default Days;
+export default MyCalendarDays;
