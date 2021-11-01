@@ -4,7 +4,7 @@ import Days from "./MyCalendarDays";
 
 const DAYS = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
 
-function MyCalendarMonth({ datas, currentDays }) {
+function MyCalendarMonth({ datas, currentDays, currentMonth }) {
   console.log(currentMonth);
   return (
     <div className='mt-2 border-2 divide-y-2 h-full w-full'>
