@@ -12,12 +12,12 @@ function MyCalendarMonth({ datas, currentDays, currentMonth }) {
         {DAYS.map((d, key) => (
           <h4
             key={key}
-            className='text-right flex items-center justify-end pr-2'>
+            className='text-right  text-[.8em] 2xl:text-base flex items-center justify-end pr-2'>
             {d}
           </h4>
         ))}
       </div>
-      <div className='grid grid-cols-7 h-80  divide-x-2 divide-y'>
+      <div className='grid grid-cols-7 h-80  text-[.8em] 2xl:text-base divide-x-2 divide-y'>
         {datas.length > 0 &&
           datas.map((week) =>
             week.map((each) => (

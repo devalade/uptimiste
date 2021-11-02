@@ -3,6 +3,8 @@ import ChevronRight from "../icons/ChevronRight";
 import StatusIcons from "../StatusIcons";
 
 function SplitBoxItems({
+  setSelectSplitBox,
+  id,
   headText = "Transport",
   headValue = "20.000",
   bodyText = "Essence",
@@ -12,19 +14,27 @@ function SplitBoxItems({
   status,
   componentTitle,
 }) {
+  const [active, setActive] = React.useState(null);
+  const handleClick = () => {
+    setSelectSplitBox({ headText, startDate, endDate, status });
+    setActive(id);
+    console.log(headText);
+  };
   return (
-    <div className='px-3 py-4'>
+    <div
+      onClick={handleClick}
+      className={`px-3 py-4 ${active === id && "bg-custom-l1"} cursor-pointer`}>
       {(componentTitle === "NoteDeFrais" && (
         <>
           <span className='flex justify-between pb-1.5'>
-            <h2 className='uppercase text-lg '>{headText}</h2>
+            <h2 className='uppercase text-sm 2xl:text-lg '>{headText}</h2>
             <small className='text-lg'>{headValue}</small>
           </span>
           <span className='flex justify-between pb-1.5'>
-            <h2 className='text-lg font-medium'>{bodyText}</h2>
+            <h2 className='text-sm 2xl:text-lg  font-medium'>{bodyText}</h2>
           </span>
           <span className='flex items-center justify-between pb-1.5'>
-            <h2 className='text-lg '>{date}</h2>
+            <h2 className='text-sm 2xl:text-lg  '>{date}</h2>
             <StatusIcons status={status} />
           </span>
         </>
@@ -32,11 +42,13 @@ function SplitBoxItems({
         (componentTitle === "Absences" && (
           <>
             <span className='flex justify-between pb-1.5'>
-              <h2 className='uppercase text-lg '>{headText}</h2>
-              <small className='text-lg'>{headValue}</small>
+              <h2 className='uppercase text-sm 2xl:text-lg '>{headText}</h2>
+              <small className='text-sm 2xl:text-lg '>{headValue}</small>
             </span>
             <span className='flex items-center justify-between pb-1.5'>
-              <h2 className='text-lg '>{startDate + " - " + endDate}</h2>
+              <h2 className='text-sm 2xl:text-lg  '>
+                {startDate + " - " + endDate}
+              </h2>
               <StatusIcons status={status} />
             </span>
           </>
@@ -44,8 +56,8 @@ function SplitBoxItems({
         (componentTitle === "BulletinDePaie" && (
           <>
             <span className='flex items-center justify-between'>
-              <h2 className='text-lg '>{date}</h2>
-              <ChevronRight className='w-6 h-4 stroke-current text-gray-300' />
+              <h2 className='text-sm 2xl:text-lg  '>{date}</h2>
+              <ChevronRight className='w-3 h-2 2xl:w-6 2xl:h-4 stroke-current text-gray-300' />
             </span>
           </>
         ))}

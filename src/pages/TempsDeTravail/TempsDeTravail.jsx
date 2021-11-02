@@ -15,6 +15,7 @@ import Textarea from "../../components/Textarea";
 import CheckBox from "../../components/CheckBox";
 import SmallInputFile from "../../components/SmallInputFile";
 import SearchBarWithSelectBox from "../../components/SearchBarWithSelectBox";
+import CRA from "./CRA";
 
 function TempsDeTravail() {
   const [activeVueGlobal, setActiveVueGlobal] = React.useState(true);
@@ -82,7 +83,7 @@ function TempsDeTravail() {
                 Feuille de temps / Compte Rendu D'activité
               </a>
             </div>
-            <SearchBarWithSelectBox />
+            {activeVueGlobal && <SearchBarWithSelectBox />}
             <div className='col-span-7'>
               {activeVueGlobal && (
                 <table className='table w-full'>
@@ -184,7 +185,7 @@ function TempsDeTravail() {
                   </tbody>
                 </table>
               )}
-              {activeFeuilleDeTemps && "Feuille de temps"}
+              {activeFeuilleDeTemps && <CRA />}
             </div>
           </div>
         </div>

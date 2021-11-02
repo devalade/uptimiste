@@ -180,31 +180,31 @@ function MyCalendar() {
   };
   console.log(dates);
   return (
-    <div className='mt-12 w-full '>
+    <div className='mt-6 lg:mt-12 w-full '>
       <div className='flex w-full justify-between'>
-        <div className='w-full flex space-x-6'>
-          <div className='flex items-center space-x-6'>
+        <div className='w-full flex space-x-1 2xl:space-x-3'>
+          <div className='flex items-center space-x-2 2xl:space-x-4'>
             <ChevronLeft
               onClick={handleNext}
-              className='w-3 h-3 cursor-pointer'
+              className=' w-2 h-2 2xl:w-3 2xl:h-3 cursor-pointer'
             />
-            <h3> Aujourd'hui</h3>
+            <h3 className='text-[.8em]'> Aujourd'hui</h3>
             <ChevronRight
               onClick={handlePrev}
-              className='w-3 h-3 cursor-pointer'
+              className='w-2 h-2 2xl:w-3 2xl:h-3 cursor-pointer'
             />
           </div>
-          <div className='flex items-center space-x-4'>
+          <div className='flex items-center space-x-1 2xl:space-x-4'>
             {/* // Select box of the month */}
             {(activeShowWeek && (
               <>
                 <label
                   htmlFor='month'
-                  className='flex items-center space-x-2 cursor-pointer'>
+                  className='flex items-center cursor-pointer'>
                   <select
                     onChange={handleSelectedWeek}
                     name='week'
-                    className='appearance-none'>
+                    className='appearance-none text-[.7em] 2xl:text-base'>
                     {dates.map((week, key) => (
                       <option
                         key={key}
@@ -225,11 +225,11 @@ function MyCalendar() {
                 <>
                   <label
                     htmlFor='month'
-                    className='flex items-center space-x-2 cursor-pointer'>
+                    className='flex items-center 2xl:space-x-1 cursor-pointer'>
                     <select
                       onChange={handleSelectedMonth}
                       name='month'
-                      className='appearance-none'>
+                      className='appearance-none  text-[.7em] 2xl:text-base'>
                       {MONTHS.map((value, key) => (
                         <option
                           key={key}
@@ -246,7 +246,7 @@ function MyCalendar() {
           </div>
         </div>
         <div>
-          <div className='btn-group w-max space-x-1'>
+          <div className='btn-group w-max  space-x-1'>
             {CalendarOptions.map(({ title }) => (
               <input
                 key={title}
@@ -255,7 +255,7 @@ function MyCalendar() {
                 name='options'
                 id={title}
                 data-title={title}
-                className='btn checked:!bg-custom-l3 capitalize checked:text-custom-d border  checked:!border-custom-l3 !bg-gray-300 !border-gray-300 !text-gray-900 font-normal'
+                className='btn text-[.7em] !min-h-[2em] !h-0 !px-1 text-center checked:!bg-custom-l3 capitalize checked:text-custom-d border  checked:!border-custom-l3 !bg-gray-300 !border-gray-300 !text-gray-900 font-normal'
               />
             ))}
           </div>

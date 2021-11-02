@@ -33,8 +33,6 @@ function App() {
         <Route exact path='/notes-de-frais/valide' component={Valide} />
         <Route exact path='/notes-de-frais/attentes' component={Attentes} />
         <Route exact path='/absences' component={Absences} />
-        <Route exact path='/absences/attentes' component={AbsencesEnAttentes} />
-        <Route exact path='/absences/valide' component={AbsencesValide} />
         <Route
           exact
           path='/absences/demande-absence'

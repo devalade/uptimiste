@@ -11,8 +11,65 @@ import SplitBox from "../../components/SplitBox/SplitBox";
 import Add from "../../components/icons/Add";
 import Input from "../../components/Input";
 import { Link } from "react-router-dom";
+import SplitBoxItems from "../../components/SplitBox/SplitBoxItems";
+import AbsencesEnAttentes from "./AbsencesEnAttentes";
+
+const FAKE_DATA = [
+  {
+    id: 1,
+    headText: "Congé payé",
+    headValue: "3 jours",
+    bodyText: "Essence",
+    date: "01 Avril 1960",
+    status: "pending",
+  },
+  {
+    id: 2,
+    headText: "Congé payé ",
+    headValue: "3 jours",
+    bodyText: "Petit dejeuner",
+    date: "01 Avril 1960",
+    status: "pending",
+  },
+  {
+    id: 3,
+    headText: "Congé payé",
+    headValue: "3 jours",
+    bodyText: "Essence",
+    date: "01 Avril 1960",
+    status: "validated",
+  },
+  {
+    id: 4,
+    headText: "Congé payé ",
+    headValue: "3 jours",
+    bodyText: "Petit dejeuner",
+    date: "01 Avril 1960",
+    status: "validated",
+  },
+  {
+    id: 5,
+    headText: "Congé payé",
+    headValue: "3 jours",
+    bodyText: "Essence",
+    date: "01 Avril 1960",
+    status: "refused",
+  },
+  {
+    id: 6,
+    headText: "Congé payé ",
+    headValue: "3 jours",
+    bodyText: "Petit dejeuner",
+    date: "01 Avril 1960",
+    status: "refused",
+  },
+];
 
 function Absences() {
+  const [selectPlitBox, setSelectSplitBox] = React.useState(null);
+
+  React.useEffect(() => {}, [selectPlitBox]);
+  console.log("Re-render all items");
   return (
     <main className='bg-custom-light h-screen text-gray-700 font-main  relative'>
       <div className='flex items-start justify-between'>
@@ -55,7 +112,7 @@ function Absences() {
             <div className='col-span-2'>
               {/* Search Bar  */}
               <Input
-                className='px-4'
+                className='mx-6 mt-4'
                 icon={Search}
                 iconPosition='left'
                 placeholder='Rechercher un bulletins ...'
@@ -64,24 +121,82 @@ function Absences() {
               <div>
                 <SplitBox
                   title='En attente'
+                  datas={FAKE_DATA}
                   status='pending'
-                  componentTitle='Absences'
+                  renderItem={({
+                    headText,
+                    headValue,
+                    bodyText,
+                    date,
+                    status,
+                  }) => (
+                    <SplitBoxItems
+                      setSelectSplitBox={setSelectSplitBox}
+                      componentTitle='Absences'
+                      headText={headText}
+                      headValue={headValue}
+                      bodyText={bodyText}
+                      date={date}
+                      status={status}
+                    />
+                  )}
                 />
                 <SplitBox
                   title='Validé'
+                  datas={FAKE_DATA}
                   status='validated'
-                  componentTitle='Absences'
+                  renderItem={({
+                    headText,
+                    headValue,
+                    bodyText,
+                    date,
+                    status,
+                  }) => (
+                    <SplitBoxItems
+                      setSelectSplitBox={setSelectSplitBox}
+                      componentTitle='Absences'
+                      headText={headText}
+                      headValue={headValue}
+                      bodyText={bodyText}
+                      date={date}
+                      status={status}
+                    />
+                  )}
                 />
                 <SplitBox
                   title='Refusé'
+                  datas={FAKE_DATA}
                   status='refused'
-                  componentTitle='Absences'
+                  renderItem={({
+                    id,
+                    headText,
+                    headValue,
+                    bodyText,
+                    date,
+                    status,
+                  }) => (
+                    <SplitBoxItems
+                      key={id}
+                      id={id}
+                      setSelectSplitBox={setSelectSplitBox}
+                      componentTitle='Absences'
+                      headText={headText}
+                      headValue={headValue}
+                      bodyText={bodyText}
+                      date={date}
+                      status={status}
+                    />
+                  )}
                 />
               </div>
             </div>
 
             {/* Left Side  */}
-            <div className='col-span-5 w-full'></div>
+            <div className='col-span-5 w-full'>
+              {selectPlitBox?.status && (
+                <AbsencesEnAttentes status={selectPlitBox?.status} />
+              )}
+            </div>
           </div>
         </div>
       </div>

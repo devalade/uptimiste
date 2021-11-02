@@ -9,8 +9,20 @@ import Success from "../../components/icons/Success";
 import Notification from "../../components/icons/Notification";
 import Add from "../../components/icons/Add";
 import SplitBox from "../../components/SplitBox/SplitBox";
+import SplitBoxItems from "../../components/SplitBox/SplitBoxItems";
+import Input from "../../components/Input";
+
+const FAKE_DATA = [
+  {
+    date: "Jullet 2021",
+  },
+  {
+    date: "Aout 2021",
+  },
+];
 
 function BulletinDePaie() {
+  const [selectPlitBox, setSelectSplitBox] = React.useState(null);
   return (
     <main className='bg-custom-light h-screen text-gray-700 font-main  relative'>
       <div className='flex items-start justify-between'>
@@ -49,29 +61,64 @@ function BulletinDePaie() {
             {/* Right Side  */}
             <div className='col-span-2'>
               {/* Search Bar  */}
-              <div className='flex items-center lg:mx-4 mx-8 mb-5 rounded-md bg-gray-100 border-custom-l3 border-2'>
-                <Search className='w-6 ml-2' />
-                <input
-                  type='text'
-                  className='w-full bg-transparent outline-none rounded-md pl-2 py-3'
-                  placeholder='Rechercher un bulletins ...'
-                />
-              </div>
+              <Input
+                className='mx-6 mt-4'
+                icon={Search}
+                iconPosition='left'
+                placeholder='Rechercher un bulletins ...'
+              />
+
               <div>
                 <SplitBox
                   title='2021'
-                  date='Juillet 2021'
-                  componentTitle='BulletinDePaie'
+                  datas={FAKE_DATA}
+                  renderItem={({
+                    headText,
+                    headValue,
+                    bodyText,
+                    date,
+                    status,
+                  }) => (
+                    <SplitBoxItems
+                      setSelectSplitBox={setSelectSplitBox}
+                      componentTitle='BulletinDePaie'
+                      date={date}
+                    />
+                  )}
                 />
                 <SplitBox
                   title='2020'
-                  date='Juillet 2020'
-                  componentTitle='BulletinDePaie'
+                  datas={[{ date: "Juillet 2020" }, { date: "Aout 2020" }]}
+                  renderItem={({
+                    headText,
+                    headValue,
+                    bodyText,
+                    date,
+                    status,
+                  }) => (
+                    <SplitBoxItems
+                      setSelectSplitBox={setSelectSplitBox}
+                      componentTitle='BulletinDePaie'
+                      date={date}
+                    />
+                  )}
                 />
                 <SplitBox
                   title='2019'
-                  date='Juillet 2019'
-                  componentTitle='BulletinDePaie'
+                  datas={[{ date: "Juillet 2019" }, { date: "Aout 2019" }]}
+                  renderItem={({
+                    headText,
+                    headValue,
+                    bodyText,
+                    date,
+                    status,
+                  }) => (
+                    <SplitBoxItems
+                      setSelectSplitBox={setSelectSplitBox}
+                      componentTitle='BulletinDePaie'
+                      date={date}
+                    />
+                  )}
                 />
               </div>
             </div>

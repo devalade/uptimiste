@@ -43,9 +43,9 @@ function Ajout() {
             </div> */}
           </div>
           {/* Content  */}
-          <div className='w-full h-full px-16 py-12 bg-white grid grid-cols-7 gap-x-32 shadow-base-200'>
+          <div className='w-full h-full px-4 2xl:px-16 py-12 bg-white grid grid-cols-7 gap-x-8 2xl:gap-x-32 shadow-base-200'>
             <div className='col-span-3'>
-              <form action='' className='w-full px-8'>
+              <form action='' className='w-full px-2 2xl:px-8'>
                 <Input
                   label='Nom de la depense'
                   type='text'
@@ -64,13 +64,13 @@ function Ajout() {
                 <Input
                   icon={CalendarOutline}
                   iconPosition='right'
-                  name='Type de la depense'
+                  label='Type de la depense'
                   type='date'
                   placeholder='Type de la depense'
                 />
                 <div className='grid grid-cols-2 gap-x-4'>
                   <Input
-                    name='Montant de depense'
+                    label='Montant de depense'
                     type='text'
                     placeholder='20.000'
                   />

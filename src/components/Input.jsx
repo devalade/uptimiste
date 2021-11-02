@@ -15,7 +15,9 @@ function Input({
     <div className={"form-control" + className}>
       {label && (
         <label className='label'>
-          <span className='label-text text-gray-900 font-medium'>{label}</span>
+          <span className='label-text  text-[.8em] 2xl:text-base text-gray-900 font-medium'>
+            {label}
+          </span>
         </label>
       )}
       <div className='flex items-center  rounded-md bg-gray-50 border-custom-l3 focus-within:ring-custom-l2 focus-within:ring-2 border-2'>
@@ -23,7 +25,7 @@ function Input({
         <input
           type={type}
           name={name}
-          className=' appearance-none text-gray-800 group-focus:ring-base-300 w-full bg-transparent outline-none rounded-md pl-2 py-2.5'
+          className=' appearance-none  text-[.8em] 2xl:text-base text-gray-800 group-focus:ring-base-300 w-full bg-transparent outline-none rounded-md pl-2 py-2.5'
           placeholder={placeholder}
         />
         {iconPosition === "right" && <Icon className='w-6 !mr-3' />}

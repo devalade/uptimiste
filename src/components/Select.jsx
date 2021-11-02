@@ -23,13 +23,13 @@ function Select({ label, name, placeholder = "", error, datas, renderItem }) {
   return (
     <div className='form-control'>
       <label className='label'>
-        <span className='label-text text-sm text-gray-900 font-medium'>
+        <span className='label-text  text-[.8em] 2xl:text-base text-gray-900 font-medium'>
           {label}
         </span>
       </label>
       <select
         name={name}
-        className='select select-bordered rounded-md text-gray-700 w-full bg-gray-50 border-2 border-custom-l3  focus:shadow-none focus:ring-custom-l3 focus:ring-2'>
+        className='select select-bordered  text-[.8em] 2xl:text-base rounded-md text-gray-700 w-full bg-gray-50 border-2 border-custom-l3  focus:shadow-none focus:ring-custom-l3 focus:ring-2'>
         <option disabled='disabled' selected='selected'>
           {placeholder}
         </option>

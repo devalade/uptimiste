@@ -35,17 +35,31 @@ function CRA() {
       <div className='col-span-3'>
         <div className='w-full border-l-4 border-custom-l2'>
           <div className='w-full text-center bg-custom-l3 py-1 '>
-            <h3 className='text-base'>
+            <h3 className='text-[.6em] 2xl:text-base'>
               Ma feuille de temps du 13/09/2021 au 19/09/2021
             </h3>
             <div className='grid grid-cols-7'>
-              <span className='text-xs font-semibold'>Lun 26</span>
-              <span className='text-xs font-semibold'>Mar 27</span>
-              <span className='text-xs font-semibold'>Mer 28</span>
-              <span className='text-xs font-semibold'>Jeu 29</span>
-              <span className='text-xs font-semibold'>Ven 30</span>
-              <span className='text-xs font-semibold'>Sam 31</span>
-              <span className='text-xs font-semibold'>Dim 01</span>
+              <span className='text-[.5em] 2xl:text-xs font-semibold'>
+                Lun 26
+              </span>
+              <span className='text-[.5em] 2xl:text-xs font-semibold'>
+                Mar 27
+              </span>
+              <span className='text-[.5em] 2xl:text-xs font-semibold'>
+                Mer 28
+              </span>
+              <span className='text-[.5em] 2xl:text-xs font-semibold'>
+                Jeu 29
+              </span>
+              <span className='text-[.5em] 2xl:text-xs font-semibold'>
+                Ven 30
+              </span>
+              <span className='text-[.5em] 2xl:text-xs font-semibold'>
+                Sam 31
+              </span>
+              <span className='text-[.5em] 2xl:text-xs font-semibold'>
+                Dim 01
+              </span>
             </div>
           </div>
           <div className='grid grid-cols-7'>

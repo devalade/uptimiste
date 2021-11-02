@@ -50,11 +50,11 @@ function DemandeAbsence() {
             </div>
           </div>
           {/* Content  */}
-          <div className='w-full h-full px-16 py-12 bg-white grid grid-cols-7 gap-x-32 shadow-base-200 '>
+          <div className='w-full h-full px-8 2xl:px-16 py-6 2xl:py-12 bg-white grid grid-cols-7 gap-x-6 2xl:gap-x-32 shadow-base-200 '>
             {/* Right Side  */}
 
             <div className='col-span-3'>
-              <form action='' className='w-full px-8'>
+              <form action='' className='w-full px-3 2xl:px-8'>
                 <Select
                   label='Type d’absence'
                   type='text'
@@ -82,7 +82,7 @@ function DemandeAbsence() {
                   label='Commentaire'
                   placeholder='Votre commentaire...'
                 />
-                <div className='flex justify-end space-x-3 mt-4'>
+                <div className='flex justify-end space-x-1 2xl:space-x-3 mt-4'>
                   <button className='btn normal-case text-custom-l4 bg-custom-d border-custom-d hover:bg-custom-d1 hover:border-custom-d1'>
                     Comfirmer
                   </button>

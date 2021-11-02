@@ -10,8 +10,63 @@ import Notification from "../../components/icons/Notification";
 import Add from "../../components/icons/Add";
 import SplitBox from "../../components/SplitBox/SplitBox";
 import { Link } from "react-router-dom";
+import SplitBoxItems from "../../components/SplitBox/SplitBoxItems";
+import Attentes from "./Attentes";
+
+const FAKE_DATA = [
+  {
+    id: 1,
+    headText: "Transport",
+    headValue: "20.000",
+    bodyText: "Essence",
+    date: "01 Avril 1960",
+    status: "pending",
+  },
+  {
+    id: 2,
+    headText: "Autre ",
+    headValue: "20.000",
+    bodyText: "Petit dejeuner",
+    date: "01 Avril 1960",
+    status: "pending",
+  },
+  {
+    id: 3,
+    headText: "Transport",
+    headValue: "20.000",
+    bodyText: "Essence",
+    date: "01 Avril 1960",
+    status: "validated",
+  },
+  {
+    id: 4,
+    headText: "Autre ",
+    headValue: "20.000",
+    bodyText: "Petit dejeuner",
+    date: "01 Avril 1960",
+    status: "validated",
+  },
+  {
+    id: 5,
+    headText: "Transport",
+    headValue: "20.000",
+    bodyText: "Essence",
+    date: "01 Avril 1960",
+    status: "refused",
+  },
+  {
+    id: 6,
+    headText: "Autre ",
+    headValue: "20.000",
+    bodyText: "Petit dejeuner",
+    date: "01 Avril 1960",
+    status: "refused",
+  },
+];
 
 function NoteDeFrais() {
+  const [selectPlitBox, setSelectSplitBox] = React.useState(null);
+
   return (
     <main className='bg-custom-light h-screen text-gray-700 font-main  relative'>
       <div className='flex items-start justify-between'>
@@ -64,23 +119,81 @@ function NoteDeFrais() {
               <div>
                 <SplitBox
                   title='En attente'
+                  datas={FAKE_DATA}
                   status='pending'
-                  componentTitle='NoteDeFrais'
+                  renderItem={({
+                    headText,
+                    headValue,
+                    bodyText,
+                    date,
+                    status,
+                  }) => (
+                    <SplitBoxItems
+                      setSelectSplitBox={setSelectSplitBox}
+                      componentTitle='NoteDeFrais'
+                      headText={headText}
+                      headValue={headValue}
+                      bodyText={bodyText}
+                      date={date}
+                      status={status}
+                    />
+                  )}
                 />
                 <SplitBox
                   title='Validé'
+                  datas={FAKE_DATA}
                   status='validated'
-                  componentTitle='NoteDeFrais'
+                  renderItem={({
+                    headText,
+                    headValue,
+                    bodyText,
+                    date,
+                    status,
+                  }) => (
+                    <SplitBoxItems
+                      setSelectSplitBox={setSelectSplitBox}
+                      componentTitle='NoteDeFrais'
+                      headText={headText}
+                      headValue={headValue}
+                      bodyText={bodyText}
+                      date={date}
+                      status={status}
+                    />
+                  )}
                 />
                 <SplitBox
                   title='Refusé'
+                  datas={FAKE_DATA}
                   status='refused'
-                  componentTitle='NoteDeFrais'
+                  renderItem={({
+                    id,
+                    headText,
+                    headValue,
+                    bodyText,
+                    date,
+                    status,
+                  }) => (
+                    <SplitBoxItems
+                      key={id}
+                      id={id}
+                      setSelectSplitBox={setSelectSplitBox}
+                      componentTitle='NoteDeFrais'
+                      headText={headText}
+                      headValue={headValue}
+                      bodyText={bodyText}
+                      date={date}
+                      status={status}
+                    />
+                  )}
                 />
               </div>
             </div>
             {/* Left Side  */}
-            <div className='col-span-5 w-full border-gray-200 border'></div>
+            <div className='col-span-5 w-full border-gray-200 border'>
+              {selectPlitBox?.status && (
+                <Attentes status={selectPlitBox?.status} />
+              )}
+            </div>
           </div>
         </div>
       </div>
