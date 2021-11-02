@@ -188,7 +188,7 @@ function MyCalendar() {
               onClick={handleNext}
               className=' w-2 h-2 2xl:w-3 2xl:h-3 cursor-pointer'
             />
-            <h3 className='text-[.8em]'> Aujourd'hui</h3>
+            <h3 className='text-[.8em] 2xl:text-base'> Aujourd'hui</h3>
             <ChevronRight
               onClick={handlePrev}
               className='w-2 h-2 2xl:w-3 2xl:h-3 cursor-pointer'
@@ -255,7 +255,7 @@ function MyCalendar() {
                 name='options'
                 id={title}
                 data-title={title}
-                className='btn text-[.7em] !min-h-[2em] !h-0 !px-1 text-center checked:!bg-custom-l3 capitalize checked:text-custom-d border  checked:!border-custom-l3 !bg-gray-300 !border-gray-300 !text-gray-900 font-normal'
+                className='btn text-[.7em] 2xl:text-base min-h-[2em] 2xl:min-h-[3em] !h-0 !px-1 2xl:!px-3 text-center checked:!bg-custom-l3 capitalize checked:text-custom-d border  checked:!border-custom-l3 !bg-gray-300 !border-gray-300 !text-gray-900 font-normal'
               />
             ))}
           </div>

@@ -17,9 +17,12 @@ function SplitBoxItems({
   const [active, setActive] = React.useState(null);
   const handleClick = () => {
     setSelectSplitBox({ headText, startDate, endDate, status });
-    setActive(id);
-    console.log(headText);
+    if (active !== id) {
+      setActive(id);
+    }
+    console.log(id);
   };
+  // React.useEffect(() => {}, [active]);
   return (
     <div
       onClick={handleClick}

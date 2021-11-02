@@ -18,7 +18,7 @@ function Badge({ status = "validated" }) {
   };
   React.useEffect(() => {
     badgeColor();
-  }, []);
+  }, [status]);
 
   return (
     <small

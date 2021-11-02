@@ -70,6 +70,7 @@ function Absences() {
 
   React.useEffect(() => {}, [selectPlitBox]);
   console.log("Re-render all items");
+  console.log(selectPlitBox);
   return (
     <main className='bg-custom-light h-screen text-gray-700 font-main  relative'>
       <div className='flex items-start justify-between'>
@@ -124,6 +125,7 @@ function Absences() {
                   datas={FAKE_DATA}
                   status='pending'
                   renderItem={({
+                    id,
                     headText,
                     headValue,
                     bodyText,
@@ -131,6 +133,8 @@ function Absences() {
                     status,
                   }) => (
                     <SplitBoxItems
+                      key={id}
+                      id={id}
                       setSelectSplitBox={setSelectSplitBox}
                       componentTitle='Absences'
                       headText={headText}
@@ -146,6 +150,7 @@ function Absences() {
                   datas={FAKE_DATA}
                   status='validated'
                   renderItem={({
+                    id,
                     headText,
                     headValue,
                     bodyText,
@@ -153,6 +158,8 @@ function Absences() {
                     status,
                   }) => (
                     <SplitBoxItems
+                      key={id}
+                      id={id}
                       setSelectSplitBox={setSelectSplitBox}
                       componentTitle='Absences'
                       headText={headText}

@@ -14,6 +14,7 @@ import Add from "../../components/icons/Add";
 import Badge from "../../components/Badge";
 
 function AbsencesEnAttentes({ status }) {
+  console.log(status);
   return (
     <>
       <div className='flex items-center mb-3 justify-between space-x-2'>
