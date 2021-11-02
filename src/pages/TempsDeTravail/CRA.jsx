@@ -38,7 +38,7 @@ function CRA() {
             <h3 className='text-[.6em] 2xl:text-base'>
               Ma feuille de temps du 13/09/2021 au 19/09/2021
             </h3>
-            <div className='grid grid-cols-7'>
+            <div className='grid grid-cols-7 py-1.5 2xl:py-0'>
               <span className='text-[.5em] 2xl:text-xs font-semibold'>
                 Lun 26
               </span>

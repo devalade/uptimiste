@@ -65,18 +65,18 @@ function TempsDeTravail() {
             </div>
           </div>
           {/* Content  */}
-          <div className='w-full h-full px-16 py-12 bg-white grid grid-cols-7 gap-x-32 shadow-base-200 '>
+          <div className='w-full h-full px-6 2xl:px-16 py-6 2xl:py-12 bg-white grid grid-cols-7 gap-x-32 shadow-base-200 '>
             <div className=' col-span-7 tabs w-full my-10 border-b-2 -pb-6'>
               <a
                 onClick={handleClick}
-                className={`tab -mb-0.5 text-lg ${
+                className={`tab -mb-0.5 text-base 2xl:text-lg ${
                   activeVueGlobal && "tab-bordered tab-active !border-custom-d"
                 } `}>
                 Vue Globale
               </a>
               <a
                 onClick={handleClick}
-                className={`tab -mb-0.5 text-lg ${
+                className={`tab -mb-0.5 text-base 2xl:text-lg ${
                   activeFeuilleDeTemps &&
                   "tab-bordered tab-active !border-custom-d"
                 } `}>
