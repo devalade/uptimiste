@@ -19,11 +19,13 @@ import TableauDeBord from "./pages/TableauDeBord/TableauDeBord";
 import LoginCollabo from "./pages/Login/LoginCollabo";
 import LoginPage from "./pages/Login/LoginPage";
 import LoginPage2 from "./pages/Login/LoginPage2";
+import MyApp from "./MyApp";
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path='/calendar' component={MyApp} />
         <Route exact path='/login/collabo' component={LoginCollabo} />
         <Route exact path='/login/2' component={LoginPage} />
         <Route exact path='/login/1' component={LoginPage2} />

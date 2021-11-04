@@ -20,6 +20,7 @@ const DONNEES = [
 ];
 
 function Select({ label, name, placeholder = "", error, datas, renderItem }) {
+  console.log(typeof renderItem);
   return (
     <div className='form-control'>
       <label className='label'>
@@ -49,8 +50,7 @@ Select.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
   error: PropTypes.string,
-  datas: PropTypes.arrayOf(Object),
-  renderItem: PropTypes.func,
+  datas: PropTypes.array,
 };
 
 export default Select;

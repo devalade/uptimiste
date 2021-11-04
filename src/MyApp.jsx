@@ -6,11 +6,11 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import frLocale from "@fullcalendar/core/locales/fr";
 
-function MyCalendar() {
+function MyApp() {
   const [value, onChange] = useState(new Date());
 
   return (
-    <div className='p-2 pt-3 '>
+    <div className='w-[800px]'>
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         selectable
@@ -41,4 +41,4 @@ function MyCalendar() {
     </div>
   );
 }
-export default MyCalendar;
+export default MyApp;

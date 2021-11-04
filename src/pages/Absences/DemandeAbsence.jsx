@@ -12,9 +12,17 @@ import Input from "../../components/Input";
 import InputFile from "../../components/InputFile";
 import Select from "../../components/Select";
 import Textarea from "../../components/Textarea";
-
 import InputCalendar from "../../components/icons/CalendarOutline";
+// import { useForm } from "react-hook-form";
 
+const TYPES_ABSENCES = [
+  "Congé payé",
+  "Congé sans solde",
+  "Repos",
+  "Maladie",
+  "Evènement familial",
+];
+const TYPES_EVENEMENT = [];
 function DemandeAbsence() {
   return (
     <main className='bg-custom-light h-screen  text-gray-700 font-main  relative'>
@@ -59,9 +67,11 @@ function DemandeAbsence() {
                   label='Type d’absence'
                   type='text'
                   placeholder='Choisir un type d’Absence'
-                  datas={[{}]}
-                  renderItem={({ value, label }) => (
-                    <options value={value}>{label}</options>
+                  datas={TYPES_ABSENCES}
+                  renderItem={(value, key) => (
+                    <option value={key} className='text-gray-50'>
+                      {value}
+                    </option>
                   )}
                 />
                 <Input
