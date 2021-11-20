@@ -20,6 +20,8 @@ import LoginCollabo from "./pages/Login/LoginCollabo";
 import LoginPage from "./pages/Login/LoginPage";
 import LoginPage2 from "./pages/Login/LoginPage2";
 import MyApp from "./MyApp";
+import Validations from "./pages/Validations/Validations";
+import MonEntreprise from "./pages/MonEntreprise/MonEntreprise";
 
 function App() {
   return (
@@ -32,8 +34,8 @@ function App() {
 
         <Route exact path='/notes-de-frais' component={Index} />
         <Route exact path='/notes-de-frais/ajout' component={Ajout} />
-        <Route exact path='/notes-de-frais/valide' component={Valide} />
-        <Route exact path='/notes-de-frais/attentes' component={Attentes} />
+        {/* <Route exact path='/notes-de-frais/valide' component={Valide} />
+        <Route exact path='/notes-de-frais/attentes' component={Attentes} /> */}
         <Route exact path='/absences' component={Absences} />
         <Route
           exact
@@ -48,17 +50,14 @@ function App() {
         <Route exact path='/absences/mariage-pacs' component={MariageOuPacs} />
         <Route exact path='/absences/maladie' component={Maladie} />
         <Route exact path='/temps-de-travail' component={TempsDeTravail} />
-        <Route
-          exact
-          path='/temps-de-travail/vue-global-tout'
-          component={VueGlobalTout}
-        />
         <Route exact path='/bulletin-de-paie' component={BulletinDePaie} />
         <Route
           exact
           path={["/", "/tableau-de-bord"]}
           component={TableauDeBord}
         />
+        <Route exact path='/validations' component={Validations} />
+        <Route exact path='/mon-entreprise' component={MonEntreprise} />
       </Switch>
       {/* <Index /> */}
       {/* <Ajout /> */}

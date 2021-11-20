@@ -5,6 +5,8 @@ import StatusIcons from "../StatusIcons";
 function SplitBoxItems({
   setSelectSplitBox,
   id,
+  fullName = "Eric Bertrand",
+  src = "http://daisyui.com/tailwind-css-component-profile-1@94w.png",
   headText = "Transport",
   headValue = "20.000",
   bodyText = "Essence",
@@ -63,6 +65,24 @@ function SplitBoxItems({
               <ChevronRight className='w-3 h-2 2xl:w-6 2xl:h-4 stroke-current text-gray-300' />
             </span>
           </>
+        )) ||
+        (componentTitle === "Validations" && (
+          <div className=' space-x-2 space-y-2'>
+            <h2 className='uppercase text-sm 2xl:text-lg '>{headText}</h2>
+            <div className='flex items-center space-x-2'>
+              <img
+                className='h-10 rounded-full'
+                src={src}
+                alt='Profile image'
+              />
+              <div className='space-y-1'>
+                <h2 className='text-sm 2xl:text-lg font-semibold capitalize'>
+                  {fullName}
+                </h2>
+                <h2 className='text-sm 2xl:text-lg'>{date}</h2>
+              </div>
+            </div>
+          </div>
         ))}
     </div>
   );
