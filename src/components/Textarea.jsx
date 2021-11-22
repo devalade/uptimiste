@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 function Textarea({ label, name, placeholder }) {
   return (
-    <div class='form-control'>
-      <label class='label'>
-        <span class='label-text  text-[.8em] 2xl:text-base text-gray-900 font-semibold'>
+    <div className='form-control'>
+      <label className='label'>
+        <span className='label-text  text-[.8em] 2xl:text-base text-gray-900 font-semibold'>
           {label}
         </span>
       </label>

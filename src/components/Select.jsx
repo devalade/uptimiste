@@ -19,8 +19,16 @@ const DONNEES = [
   },
 ];
 
-function Select({ label, name, placeholder = "", error, datas, renderItem }) {
-  console.log(typeof renderItem);
+function Select({
+  label,
+  name,
+  placeholder = "",
+  error,
+  datas,
+  renderItem,
+  onChange,
+}) {
+  // console.log(typeof renderItem);
   return (
     <div className='form-control'>
       <label className='label'>
@@ -29,6 +37,7 @@ function Select({ label, name, placeholder = "", error, datas, renderItem }) {
         </span>
       </label>
       <select
+        onChange={onChange}
         name={name}
         className='select select-bordered  text-[.8em] 2xl:text-base rounded-md text-gray-700 w-full bg-gray-50 border-2 border-custom-l3  focus:shadow-none focus:ring-custom-l3 focus:ring-2'>
         <option disabled='disabled' selected='selected'>
@@ -51,6 +60,7 @@ Select.propTypes = {
   placeholder: PropTypes.string,
   error: PropTypes.string,
   datas: PropTypes.array,
+  onChange: PropTypes.func,
 };
 
 export default Select;

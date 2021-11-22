@@ -15,7 +15,7 @@ function SmallInputFile() {
         <input
           onChange={(e) => console.log(e.target.value)}
           type='file'
-          class='hidden'
+          className='hidden'
         />
       </label>
     </div>

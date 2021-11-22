@@ -46,7 +46,7 @@ Input.propTypes = {
   /**
    Prend un objet representant une icon
    */
-  icon: PropTypes.element,
+  icon: PropTypes.func,
   /**
    Prend le type d'input qui est une chaine de caractere: text | number | file ... 
    */
@@ -64,7 +64,7 @@ Input.propTypes = {
    */
   placeholder: PropTypes.string,
   /**
-   Position l'icon a gauche ou a droite l'icon passe en parametre
+   Positionne l'icon a gauche ou a droite l'icon passe en parametre
    Prend que deux valeurs: 'left' | 'right'
    */
   iconPosition: PropTypes.oneOf(["left", "right"]),

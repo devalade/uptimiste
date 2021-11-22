@@ -12,11 +12,13 @@ import SplitBox from "../../components/SplitBox/SplitBox";
 import MyCalendar from "../../components/MyCalendar/MyCalendar";
 
 function TableauDeBord() {
-  const [inputRangeValue, setInputRangeValue] = React.useState(0);
-
+  const [inputRangeValue, setInputRangeValue] = React.useState(60);
+  const refRange = React.useRef();
   const handleChange = (e) => {
     setInputRangeValue(e.target.value);
+    refRange.current.background = `linear-gradient(90deg, #f4921b ${e.target.value}%, #c4c4c4 ${e.target.value}%)`;
   };
+  React.useEffect(() => {}, [inputRangeValue]);
 
   return (
     <main className='bg-custom-light h-screen text-gray-700 font-main  relative'>
@@ -92,19 +94,23 @@ function TableauDeBord() {
                 </div>
               </div>
               <h2 className='text-lg font-medium mt-4'>Onbording</h2>
-              <div>
+              <div className='relative'>
+                <div className='absolute'></div>
                 <input
-                  onChange={handleChange}
+                  ref={refRange}
+                  // onMouseMove={handleChange}
+                  // onChange={handleChange}
                   type='range'
                   max='100'
                   name='onboarding'
                   value={inputRangeValue}
-                  className=''></input>
+                  className='w-full'
+                />
+                <output
+                  className='bubble'
+                  htmlFor='onboarding'
+                  onforminput={inputRangeValue}></output>
               </div>
-              <output
-                className='bubble'
-                htmlFor='onboarding'
-                onforminput={inputRangeValue}></output>
               <button className='w-full mt-6 btn btn-outline normal-case border-custom-d text-custom-d hover:bg-custom-d hover:border-custom-d hover:text-custom-l4'>
                 Mettre à jours
               </button>

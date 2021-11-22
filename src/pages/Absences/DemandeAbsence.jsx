@@ -13,6 +13,8 @@ import InputFile from "../../components/InputFile";
 import Select from "../../components/Select";
 import Textarea from "../../components/Textarea";
 import InputCalendar from "../../components/icons/CalendarOutline";
+import CalendarOutline from "../../components/icons/CalendarOutline";
+import SmallInputFile from "../../components/SmallInputFile";
 // import { useForm } from "react-hook-form";
 
 const TYPES_ABSENCES = [
@@ -22,8 +24,46 @@ const TYPES_ABSENCES = [
   "Maladie",
   "Evènement familial",
 ];
+const SELECT_DATAS = [
+  { key: 1, typesAbsences: "Congé payé", typesEvenement: [""] },
+  {
+    key: 2,
+    typesAbsences: "Congé sans solde",
+    typesEvenement: [""],
+  },
+  { key: 3, typesAbsences: "Repos", typesEvenement: [""] },
+  { key: 4, typesAbsences: "Maladie", typesEvenement: [""] },
+  {
+    key: 5,
+    typesAbsences: "Evènement familial",
+    typesEvenement: ["Mariage ou PACS"],
+  },
+];
 const TYPES_EVENEMENT = [];
 function DemandeAbsence() {
+  const [selectTypesAbsences, setSelectTypesAbsences] = React.useState({
+    typesAbsences: "",
+    typesEvenement: [],
+  });
+  const [selectTypeEvenement, setSelectTypeEvemenent] = React.useState("");
+  React.useEffect(() => {}, [selectTypesAbsences, selectTypeEvenement]);
+
+  const handleSelectChange = (e) => {
+    const findTypesAbsences = SELECT_DATAS.find(
+      ({ key }) => parseInt(key) === parseInt(e.target.value)
+    );
+
+    setSelectTypesAbsences(() => findTypesAbsences);
+  };
+
+  const handleSelectTypeEvenement = (e) => {
+    console.log(e.target.value);
+    const findTypesEvenements =
+      selectTypesAbsences?.typesEvenement[e.target.value];
+    setSelectTypeEvemenent(() => findTypesEvenements);
+  };
+
+  console.log(selectTypeEvenement);
   return (
     <main className='bg-custom-light h-screen  text-gray-700 font-main  relative'>
       <div className='flex items-start justify-between'>
@@ -64,23 +104,59 @@ function DemandeAbsence() {
             <div className='col-span-3'>
               <form action='' className='w-full px-3 2xl:px-8'>
                 <Select
+                  onChange={handleSelectChange}
                   label='Type d’absence'
                   type='text'
                   placeholder='Choisir un type d’Absence'
-                  datas={TYPES_ABSENCES}
-                  renderItem={(value, key) => (
-                    <option value={key} className='text-gray-50'>
-                      {value}
+                  datas={SELECT_DATAS}
+                  renderItem={({ key, typesAbsences }) => (
+                    <option
+                      className='text-gray-900 hover:text-gray-50 hover:bg-custom-d p-2'
+                      value={key}>
+                      {typesAbsences}
                     </option>
                   )}
                 />
+
+                {selectTypesAbsences?.typesAbsences ===
+                  "Evènement familial" && (
+                  <Select
+                    onChange={handleSelectTypeEvenement}
+                    label='Type  d’évènement'
+                    type='text'
+                    placeholder='Choisir un type  d’évènement'
+                    datas={selectTypesAbsences?.typesEvenement}
+                    renderItem={(value, key) => (
+                      <option className='text-gray-900 p-2' value={key}>
+                        {value}
+                      </option>
+                    )}
+                  />
+                )}
+                {selectTypesAbsences?.typesAbsences === "Evènement familial" &&
+                  selectTypesAbsences?.typesEvenement.includes(
+                    selectTypeEvenement
+                  ) && (
+                    <Select
+                      label='Précisions'
+                      type='text'
+                      placeholder='Choisir le type'
+                      datas={[{}]}
+                      renderItem={({ value, label }) => (
+                        <option className='text-gray-900 p-2' value={value}>
+                          {label}
+                        </option>
+                      )}
+                    />
+                  )}
+
                 <Input
                   iconPosition='right'
                   icon={InputCalendar}
                   label='Date de début'
                   type='date'
-                  placeholder='Type de la depense'
                 />
+
                 <Input
                   iconPosition='right'
                   icon={InputCalendar}
@@ -88,10 +164,29 @@ function DemandeAbsence() {
                   type='date'
                   placeholder='Type de la depense'
                 />
-                <Textarea
-                  label='Commentaire'
-                  placeholder='Votre commentaire...'
+
+                {selectTypesAbsences?.typesAbsences === "" && (
+                  <Textarea
+                    label='Commentaire'
+                    placeholder='Votre commentaire...'
+                  />
+                )}
+
+                {/* <Input
+                  icon={CalendarOutline}
+                  iconPosition='right'
+                  label='Début '
+                  type='date'
                 />
+                <Input
+                  icon={CalendarOutline}
+                  iconPosition='right'
+                  label='Fin'
+                  type='date'
+                /> */}
+                {selectTypesAbsences?.typesAbsences ===
+                  "Evènement familial" && <SmallInputFile />}
+
                 <div className='flex justify-end space-x-1 2xl:space-x-3 mt-4'>
                   <button className='btn normal-case text-custom-l4 bg-custom-d border-custom-d hover:bg-custom-d1 hover:border-custom-d1'>
                     Comfirmer

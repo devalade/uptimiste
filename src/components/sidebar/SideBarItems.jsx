@@ -18,7 +18,7 @@ function SideBarItems({ icon: Icon, name, to = "" }) {
 }
 
 SideBarItems.propTypes = {
-  icon: PropTypes.element,
+  icon: PropTypes.func,
   name: PropTypes.string,
   to: PropTypes.string,
 };
